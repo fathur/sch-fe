@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack -p 3002",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -13,7 +13,8 @@
   "dependencies": {
     "next": "15.4.6",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "react-hook-form": "^7.62.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -27,8 +28,7 @@
     "lint-staged": "^16.1.5",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
-  ,
+  },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,mjs,cjs,mts,cts}": [
       "eslint --fix --max-warnings=0"
