@@ -3,6 +3,7 @@
 import { clearAuthToken } from '@/lib/authToken';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import Card from '@/components/ui/Card';
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -151,33 +152,14 @@ export default function DashboardPage() {
           {/* Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {sampleCards.map((card, index) => (
-              <div
+              <Card
                 key={index}
-                className="bg-white/80 backdrop-blur-md rounded-xl shadow-lg border border-white/20 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-              >
-                {/* Card Header */}
-                <div className={`bg-gradient-to-r ${card.color} p-4 text-white`}>
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold">{card.title}</h3>
-                    <span className="text-2xl">{card.icon}</span>
-                  </div>
-                </div>
-
-                {/* Card Body */}
-                <div className="p-4">
-                  <p className="text-gray-700 leading-relaxed">{card.body}</p>
-                </div>
-
-                {/* Card Footer */}
-                <div className="px-4 pb-4">
-                  <div className="flex items-center justify-between text-sm text-gray-500">
-                    <span>{card.footer}</span>
-                    <button className="text-blue-600 hover:text-blue-800 font-medium transition-colors">
-                      View Details →
-                    </button>
-                  </div>
-                </div>
-              </div>
+                title={card.title}
+                body={card.body}
+                footer={card.footer}
+                color={card.color}
+                icon={card.icon}
+              />
             ))}
           </div>
 
